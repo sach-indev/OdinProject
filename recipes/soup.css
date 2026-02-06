@@ -1,0 +1,78 @@
+body
+{
+    background: linear-gradient(120deg, #ffd606, #3aff04);
+}
+
+h1
+{
+    color : red;
+    font-size : 110px;
+    text-align : center;
+    font-family :Verdana, Geneva, Tahoma, sans-serif
+}
+
+h2
+{
+    font-weight : bold;
+    font-size : 100px;
+    text-align : center;
+    font-family :Arial, Helvetica, sans-serif;
+    color : rgb(172, 9, 222)
+}
+
+li
+{
+    font-size : 50px;
+}
+
+ul, ol
+{
+    padding-left : 200px;
+    margin-top : 50px;
+}
+
+#para1
+{
+    color : rgb(5, 123, 173);
+    text-align : center;
+    padding : 21px;
+    font-size : 29px;
+}
+
+img
+{
+    display : block;
+    margin : auto;
+}
+
+li
+{
+    color : brown
+}
+
+strong
+{
+    color : rgb(11, 2, 139)
+}
+
+h2 strong
+{
+    color : inherit;
+}
+
+h3 em
+{
+    font-weight : bold;
+    font-size : 60px;
+    text-align : center;
+    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color : rgb(172, 9, 222);
+    display : block;
+}
+
+footer
+{
+    font-size : 50px;
+    text-align : center;
+    margin-top : 50px;
+}
