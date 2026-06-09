@@ -4,4 +4,5 @@ My solutions and projects from The Odin Project.
 
 ## Projects
 
-- [HTML Recipes](https://yourusername.github.io/OdinProject/Html-recipes/)
+- [Recipes](https://sach-indev.github.io/OdinProject/Html-recipes/)
+- [Responsive-Site](https://sach-indev.githu.io/OdinProject/Responsive-Site)
