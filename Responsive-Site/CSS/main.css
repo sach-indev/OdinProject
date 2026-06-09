@@ -306,10 +306,10 @@ nav li a:hover {
     width: 350px;
     bottom: -2em;
   }
-  testimonials-section ul {
+  .testimonials-section ul {
     display: flex;
   }
-  testimonials-section ul li {
+  .testimonials-section ul li {
     margin: 0 1em;
   }
   .contact-section {
