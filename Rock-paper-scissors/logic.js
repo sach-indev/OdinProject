@@ -1,6 +1,6 @@
 "use strict"
 
-
+//main game logic
 let playRound = (playerChoice) =>
 {
     let compChoice = Math.floor(Math.random()*3);
@@ -19,27 +19,33 @@ let playRound = (playerChoice) =>
     }
 };
 
+//create start button
 const startBtn = document.querySelector('.start-btn');
 const games = document.querySelector('.games');
 
 let playerScore = 0, compScore = 0, round = 1;
 
+//function to clear game ui
 function clearGames()
 {
     games.innerHTML = "";
 }
 
+//function to create game ui for each round
 function createRound()
 {
     clearGames();
 
+    //round title
     const roundTitle = document.createElement('h1');
     roundTitle.className = 'round-title';
     roundTitle.innerText = `Round ${round} : Make Your Choice`;
 
+    //choices
     const choices = document.createElement('div');
     choices.className = 'choices';
 
+    //three buttons
     const rock = document.createElement('button');
     const paper = document.createElement('button');
     const scissors = document.createElement('button');
@@ -55,9 +61,10 @@ function createRound()
 
     const resultBox = document.createElement('div');
     resultBox.className = 'round-result';
-
-    resultContainer.appendChild(resultBox); 
-
+    resultBox.style.display = 'none';
+    resultContainer.appendChild(resultBox);
+    
+    
     //buttons
     const continueBtn = document.createElement('button');
     continueBtn.className = 'continue';
@@ -67,29 +74,29 @@ function createRound()
     const finishBtn = document.createElement('button');
     finishBtn.className = 'finish';
     finishBtn.innerText = 'Finish';
-
+    
     //append Everything
     games.append(roundTitle, choices, resultContainer, continueBtn, finishBtn);
-
+    
     function disableChoices()
     {
         [rock, paper, scissors].forEach(b => b.disabled = true);
     }
-
+    
     function handleChoice(choice)
     {
         const win = playRound(choice);
-
+        
         disableChoices();
         continueBtn.disabled = false;
-
+        
         if(win==0)
         {
             resultBox.innerText = "IT'S A TIE";
             playerScore++;
             compScore++;
         }
-
+        
         else if(win==1)
         {
             resultBox.innerText = "YOU WIN";
@@ -100,8 +107,10 @@ function createRound()
             resultBox.innerText = "YOU LOOSE";
             compScore++;
         }
-    }
 
+        resultBox.style.display = 'flex';
+    }
+            
     rock.onclick = ()=>handleChoice(0);
     paper.onclick = ()=>handleChoice(1);
     scissors.onclick = ()=>handleChoice(2);
