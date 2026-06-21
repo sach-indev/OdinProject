@@ -1,0 +1,201 @@
+.main
+{
+    .container
+    {
+        display : flex;
+        flex-direction : column;
+        align-items: center;
+        gap: 20px;
+        .title
+        {
+            font-family: "Roboto", sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+
+            background: linear-gradient(
+                135deg,
+                #000000,
+                #0a1f44,
+                #1e3a8a,
+                #050505
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            text-shadow:
+                0 2px 4px rgba(246, 7, 7, 0.3),
+                0 0 10px rgba(11, 73, 241, 0.2);
+        }
+
+        .start-btn
+        {
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            padding: 15px 30px;
+
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            color: white;
+
+            border: none;
+            border-radius: 15px;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+            cursor: pointer;
+            transition: all 0.2s ease;
+            
+            &:hover
+            {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            }
+        }
+
+        .games
+        {
+            display : flex;
+            flex-direction : column;
+            gap: 20px;
+            .round-title
+            {   
+                font-family: "Roboto", sans-serif;
+                font-size: 1.8rem;
+                font-weight: 600;
+    
+                background-color: #000;
+                color: #fff;
+    
+                padding: 10px 20px;
+                border-radius: 10px;
+    
+                width: fit-content;
+                margin: 10px auto;
+                text-align: center;
+            }
+
+            .choices
+            {
+                display: flex;
+                justify-content: center;
+                gap: 3em;
+                
+                button
+                {
+                    font-size: 1rem;
+                    font-weight: bold;
+
+                    padding: 15px 30px;
+
+                    background: linear-gradient(135deg, #8ac53d, #dd2476);
+                    color: yellow;
+
+                    border: none;
+                    border-radius: 15px;
+
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+            
+                    &:hover
+                    {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+                    }
+
+                }
+            }
+
+            .round-result-container
+            {
+                display:flex;
+                justify-content: center;
+                padding: 20px;
+                .round-result
+                {
+                    font-size: 20px;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-size: 1.8rem;
+
+                    color: black;
+                    background-color: red;
+
+                    padding: 10px 20px;
+                    border-radius: 20px;;
+                    
+                }
+            }
+
+            .continue, .finish
+            {
+                border : none;
+                border-radius: 15px;
+                font-size: 1rem;
+                font-weight: bold;
+
+                padding: 15px 30px;
+                color : black;
+                background: linear-gradient(150deg, yellow, red);
+
+                box-shadow: 0 4 10 rgba(11, 73, 241, 0.2);
+
+                 &:hover
+                {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+                }
+            }
+
+            .score-container
+            {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                .comp-score, .player-score
+                {
+                    
+                    font-size: 20px;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-size: 1.8rem;
+
+                    color: black;
+                    background-color: red;
+
+                    padding: 10px 20px;
+                    border-radius: 20px;;
+                }
+            }
+
+            .final-result-container
+            {
+                display:flex;
+                justify-content: center;
+                padding: 20px;
+                .final-result
+                {
+                    font-size: 20px;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-size: 1.8rem;
+
+                    color: black;
+                    background-color: red;
+
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    
+                }
+            }
+
+            
+        }
+
+
+    }
+}
