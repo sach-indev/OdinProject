@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a sketch</title>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="top-section">
+        
+        <div class="title-text">
+            <h1>ETCH A SKETCH</h1>
+        </div>
+
+        <div class="menu">
+            <div id="color-input">
+                <p>Choose Color: </p>
+                <input type="color" id="grid-color">
+            </div>
+            <form id="myform">
+                <p>Enter size of square grid(1-100): </p>
+                <input type="number" id="grid-size" min="1" max="100" required>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+            <button type="button" id="random">Randomize</button>
+            <button type="button" id="reset">Reset</button>
+        </div>
+    </div>
+
+    <section class="grid-area">
+        <!--Here we add grid Area-->
+    </section>
+</body>
+</html>
