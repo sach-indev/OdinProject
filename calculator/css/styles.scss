@@ -74,7 +74,11 @@ body
 
             .view
             {
-                font-size: 20px;
+                width : 100%;
+                text-align : right;
+                white-space : nowrap;
+                overflow: hidden;
+                font-size: 40px;
             }
         }
         .row
@@ -94,9 +98,14 @@ body
                 font-weight: bold;
             }
 
-            .basic-op
+            .basic-op, .equal-to
             {
                 background: gold;
+                &.selected
+                {
+                    background: orange;
+                    color: white;
+                }
             }
             
             .digit
@@ -114,3 +123,9 @@ body
         }
     }
 }
+
+button:active {
+    transform: scale(0.96);
+    filter: brightness(0.8);
+}
+

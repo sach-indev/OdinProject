@@ -53,7 +53,11 @@ body {
   background: white;
 }
 .calculator .container .view-container .view {
-  font-size: 20px;
+  width: 100%;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 40px;
 }
 .calculator .container .row {
   flex: 1;
@@ -70,8 +74,12 @@ body {
   border: none;
   font-weight: bold;
 }
-.calculator .container .row .basic-op {
+.calculator .container .row .basic-op, .calculator .container .row .equal-to {
   background: gold;
+}
+.calculator .container .row .basic-op.selected, .calculator .container .row .equal-to.selected {
+  background: orange;
+  color: white;
 }
 .calculator .container .row .digit {
   background: white;
@@ -80,4 +88,9 @@ body {
 .calculator .container .row #reset {
   background: red;
   color: white;
+}
+
+button:active {
+  transform: scale(0.96);
+  filter: brightness(0.8);
 }/*# sourceMappingURL=styles.css.map */
