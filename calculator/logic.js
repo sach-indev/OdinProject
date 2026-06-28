@@ -1,10 +1,18 @@
 "use strict"
 
-const basicOp = document.querySelectorAll(".basic-op");
+const view = document.querySelector(".view");
+
 const digit = document.querySelectorAll(".digit");
+const basicOp = document.querySelectorAll(".basic-op");
+
+//Evaluating and reseting operations
 const reset = document.getElementById("reset");
 const equal = document.querySelector(".equal-to");
-const view = document.querySelector(".view");
+//special operations
+const root = document.getElementById('root');
+const sign = document.getElementById('sign');
+const percentage = document.getElementById('percentage');
+const dot = document.getElementById('dot');
 
 const state = 
 {
@@ -12,11 +20,13 @@ const state =
     cur : "", 
     op : null,
     jc : false,
-    btn: null, 
+    btn: null,
+    point : false,
 };
 
 const MAX_FONT = 40, MIN_FONT = 20;
 
+//Fit text on screen
 function fitText()
 {
     view.style.fontSize = MAX_FONT + "px";
@@ -31,9 +41,15 @@ function fitText()
     return view.scrollWidth <= view.clientWidth;
 }
 
+function clean(num)
+{
+    return Number(num.toPrecision(15));
+}
+
 function display(res)
 {
     view.innerText = res;
+    fitText();
 };
 
 display("0");
@@ -43,17 +59,25 @@ function calculate()
     const a = parseFloat(state.prev);
     const b = parseFloat(state.cur);
 
+    let res;
+
     switch (state.op)
     {
         case '+':
-            return String(a+b);
+            res = a + b;
+            break
         case '\u2212':
-            return String(a-b);
+            res = a - b;
+            break;
         case "\u00F7":
-            return String(a/b);
+            res = a/b;
+            break;
         case "\u00D7":
-            return String(a*b);
+            res = a*b;
+            break;
     }
+
+    return String(clean(res));
 }
 
 digit.forEach(btn =>
@@ -72,6 +96,7 @@ digit.forEach(btn =>
             state.cur = "";
             state.op = null;
             state.jc = false;
+            state.point = false;
         }
 
         state.cur += btn.innerText;
@@ -81,7 +106,6 @@ digit.forEach(btn =>
         {
             state.cur = state.cur.slice(0, -1);
             display(state.cur);
-            fitText();
         }
     });
 });
@@ -100,6 +124,7 @@ basicOp.forEach(btn =>
         if(state.cur==="")
         {
             state.op = op;
+            state.point = false;
             return;
         }
 
@@ -109,6 +134,7 @@ basicOp.forEach(btn =>
             state.cur = "";
             state.op = op;
             state.jc = false;
+            state.point = false;
             return;
         }
 
@@ -116,15 +142,14 @@ basicOp.forEach(btn =>
         state.cur = "";
         state.op = op;
         state.jc = false;
+        state.point = false;
 
         display(state.prev);
     });
 });
 
-
 equal.addEventListener('click', ()=>
 {
-
     if(state.btn)
     {
         state.btn.classList.remove("selected");
@@ -133,12 +158,13 @@ equal.addEventListener('click', ()=>
 
     if(state.op == null || state.cur === "") return;
 
-    state.prev = calculate();
-    state.cur = "";
+    state.cur = calculate();
+    state.prev = "";
     state.op = null;
     state.jc = true;
+    state.point = state.cur.includes(".")
 
-    display(state.prev);
+    display(state.cur);
 });
 
 reset.addEventListener('click', ()=>
@@ -154,6 +180,65 @@ reset.addEventListener('click', ()=>
     state.cur = "";
     state.op = null;
     state.jc = false;
+    state.point = false;
 
     display('0');
 });
+
+root.addEventListener('click', () =>
+{
+    if(state.cur == "") return;
+    else
+    {
+        state.cur = String(Math.sqrt(parseFloat(state.cur)));
+        display(state.cur);
+
+        if(state.cur.includes("."))
+        {
+            state.point = true;
+        }
+    }
+});
+
+percentage.addEventListener('click', ()=>
+{
+    if(state.cur == "") return;
+    else
+    {
+        state.cur = String((parseFloat(state.cur))/100);
+        display(state.cur);
+        
+        if(state.cur.includes("."))
+        {
+            state.point = true;
+        }
+    }
+});
+
+dot.addEventListener('click', ()=>
+{
+    if(state.cur == "")
+    {
+        state.cur = '0' + dot.innerText;
+        display(state.cur);
+    }
+    else
+    {
+        if(!state.point)
+        {
+            state.cur = state.cur + dot.innerText;
+            display(state.cur);
+            state.point = true;
+        }
+    }
+});
+
+sign.addEventListener('click', () =>
+{
+    if(state.cur.startsWith("-")) state.cur = state.cur.slice(1);
+    else if(state.cur==="") return;
+    else state.cur = "-" + state.cur;
+
+    display(state.cur);
+});
+
