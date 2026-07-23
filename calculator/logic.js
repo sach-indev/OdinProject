@@ -21,7 +21,6 @@ const state =
     op : null,
     jc : false,
     btn: null,
-    point : false,
 };
 
 const MAX_FONT = 40, MIN_FONT = 20;
