@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="logic.js" defer></script>
+</head>
+<body>
+    <!--Main body-->
+    <div class="container">
+        <div class="background-img">
+            <img id="cherry" src="images/cherry-tree.jpg" alt="cherry tree">
+            <div id="odin-logo">
+                <img src="images/odin-lined.png" alt="odin logo">
+                <h3>ODIN</h3>
+            </div>
+
+            <div id="credit">
+                <p>Photo by <span>James Harvard</span> from <span>unsplash</span></p>
+            </div>
+        </div>
+
+        <main class="hero">
+            <section class="introduction">
+                <h3>This is not a real online service! You know you need something like this in your life to help you realise your deepest dreams. Sign up <span>now</span> to get the answer</h3><h3>You know <span>you</span> want to.</h3>
+            </section>
+
+            <section class="paperwork">
+                <h3>Let's do this!</h3>
+                <form id="signup-form">
+
+                    <div class="form-group-outer">
+                        <div class="form-group-inner">
+                            <label for="fname">FIRST NAME:</label>
+                            <input type="text" id="fname" name="fname" required>
+                        </div>
+
+                        <div class="form-group-inner">
+                            <label for="lname">LAST NAME:</label>
+                            <input type="text" id="lname" name="lname" required>
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group-outer">
+                        
+                        <div class="form-group-inner">
+                            <label for="mail">EMAIL:</label>
+                            <input type="email" id="mail" name="email" required>
+                        </div>
+                        
+                        <div class="form-group-inner">
+                            <label for="phone-number">PHONE NUMBER:</label>
+                            <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{10}" required>
+                        </div>
+    
+                    </div>
+
+                    
+                    <div class="form-group-outer">
+                        <div class="form-group-inner">
+                            <label for="password">PASSWORD:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+
+                        <div class="form-group-inner">
+                            <label for="cpassword">CONFIRM PASSWORD:</label>
+                            <input type="password" id="cpassword" name="confirm-password" required>
+                            <span id="error"></span>
+                        </div>
+                    </div>
+
+                </form>
+            </section>
+            <section class="submit-part">
+                <div class="submit-btn">
+                    <button type="submit" form="signup-form">Create Account</button>
+                </div>
+                <p>Already have an account?<a href="#">Log in</a></p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

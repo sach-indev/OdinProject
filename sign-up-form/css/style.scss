@@ -1,0 +1,231 @@
+@import "node_modules/modern-normalize/modern-normalize.css";
+@font-face {
+    font-family: "Norse";
+    src: url("../fonts/Norsebold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// *{
+//     border: 3px solid black;
+// }
+
+body
+{
+    margin : 0;
+    height : 100%;
+}
+.container
+{
+    display : flex;
+    height: 100vh;
+    .background-img
+    {
+        position: relative;
+        flex : 1;
+        #cherry
+        {
+            position: absolute;
+            top : 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        #odin-logo
+        {
+            position: absolute;
+            top: 15% ;
+            left: 50%;
+            transform : translateX(-50%);
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.25);
+            gap:10px;
+            z-index: 2;
+
+            img
+            {
+                width: 120px;
+                height: auto;
+            }
+
+            h3
+            {
+                margin: 0;
+                color: white;
+                font-size: 4rem;
+                font-family: "Norse", sans-serif;
+            }
+        }
+        #credit
+        {
+            position: absolute;
+            bottom: 1% ;
+            left: 50%;
+            transform : translateX(-50%);
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // background-color: rgba(0, 0, 0, 0.25);
+            gap:10px;
+            z-index:3;
+
+            p
+            {
+                margin: 0;
+                color: black;
+                font-size: 1rem;
+                span
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero
+    {
+        flex : 1;
+        // padding-left: 2rem;
+        // padding-right: 2rem;
+        display: flex;
+        flex-direction: column;
+
+        .introduction
+        {
+            flex : 1;
+            display: flex;
+            background-color: rgb(255, 249, 249);
+            padding: 1rem;
+            margin-top: 40px;
+            flex-direction: column;
+            h3
+            {
+                font-size: 25px;
+                line-height: 1.3;
+            }
+            span
+            {
+                font-style: italic;
+            }
+        }
+
+        
+        .submit-part
+        {
+            flex : 1;
+            display: flex;
+            background-color: rgb(255, 249, 249);
+            padding: 2rem;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+            .submit-btn
+            {
+                button
+                {
+                    background-color: rgb(255, 57, 103);
+                    border: none;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    padding: 1rem;
+                    color: white;
+                }
+            }
+
+            p
+            {
+                a
+                {
+                    text-decoration: none;
+                    color:  rgb(255, 57, 103);;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .paperwork
+        {
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,.35);
+            z-index: 1;
+            flex: 0;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+
+            h3
+            {
+                font-size: 30px;
+            }
+            form
+            {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                input
+                {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 10px 15px;
+                    border: 1px solid rgba(0, 0, 0, 0.15);
+                    border-radius: 10px;
+                }
+                input:user-invalid
+                {
+                    border: 2px solid red;
+                }
+                input:user-valid
+                {
+                    border: 2px solid green;
+                }
+                input:focus
+                {
+                    border: 2px solid blue;
+                    outline: none;
+                }
+                label
+                {
+                    color: rgba(49, 49, 48, 0.785);
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                }
+                .form-group-outer
+                {
+                    display: flex;
+                    flex: 1;
+                    font-size: 15px;
+                    gap: 30px;
+    
+                    .form-group-inner
+                    {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#error
+{
+    color: red;
+    font-size: 0.8rem;
+}
+
+
+
